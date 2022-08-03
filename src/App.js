@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./components/MovieCard";
 
-import './App.css';
+import './App.scss';
 import SearchIcon from './search.svg';
 
-const API_URL = 'http://www.omdbapi.com?apikey=7f9484a2'
+const API_URL = 'https://api.themoviedb.org/3/search/movie?api_key=30a95f151f99b59e441796c6ba07f223'
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
+    const response = await fetch(`${API_URL}&query=${title}`);
     const data = await response.json();
-    setMovies(data.Search);
+    console.log(data)
+    setMovies(data.results);
   }
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const App = () => {
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
           onKeyUp={(event) => {
-            if(event.key === 'Enter') {
+            if (event.key === 'Enter') {
               searchMovies(event.target.value)
             }
           }}

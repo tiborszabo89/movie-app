@@ -1,19 +1,21 @@
 import React from "react";
 
+const IMG_URL = 'https://image.tmdb.org/t/p/original';
+const PLACEHOLDER_IMG = 'https://via.placeholder.com/400';
+
 const MovieCard = ({ movie }) => {
   return (
     <div className="movie">
       <div>
-        <p>{movie.Year}</p>
+        <p>{movie.release_date}</p>
       </div>
       <div>
         <img
-          src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/400'}
-          alt={movie.Title} />
+          src={movie.backdrop_path ? `${IMG_URL}${movie.backdrop_path}` : PLACEHOLDER_IMG}
+          alt={movie.title} />
       </div>
       <div>
-        <span>{movie.Type}</span>
-        <h3>{movie.Title}</h3>
+        <h3>{movie.title}</h3>
       </div>
     </div>
 
