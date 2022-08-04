@@ -40,11 +40,11 @@ const App = () => {
         />
       </div>
       {
-        movies?.length > 0
+        movies?.length 
           ? (
             <div className="container">
               {movies.map((movie) => (
-                <MovieCard key={movie.imdbID} movie={movie} />
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </div>
           ) :
