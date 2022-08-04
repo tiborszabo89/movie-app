@@ -23,12 +23,9 @@ const App = () => {
   
   useEffect(() => {
     searchMovies();
-  }, []);
-  
-  useEffect(() => {
     latestMovies();
   }, []);
-
+  
   return (
     <div className="app">
       <h1>Movie Database Test</h1>
@@ -36,7 +33,10 @@ const App = () => {
         <input
           placeholder="Search for movies"
           value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
+          minLength={2}
+          onChange={(event) => {
+            setSearchTerm(event.target.value)}
+          }
           onKeyUp={(event) => {
             if (event.key === 'Enter') {
               searchMovies(event.target.value)

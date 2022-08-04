@@ -1,7 +1,7 @@
 import React from "react";
 import './MovieCard.scss';
 
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_URL = 'https://image.tmdb.org/t/p/original';
 const PLACEHOLDER_IMG = 'https://www.stevensegallery.com/640/360';
 
 const MovieCard = ({ movie }) => {
