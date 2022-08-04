@@ -91,7 +91,9 @@ h1 {
     grid-template-columns: repeat(1, 1fr);  
   }
 }
-
+.dont-display {
+  display: none;
+}
 .movie-card {
   position: relative;  
   z-index: 1;  
@@ -105,6 +107,7 @@ h1 {
   0 8px 16px rgba(0,0,0,0.07),
   0 16px 32px rgba(0,0,0,0.07), 
   0 32px 64px rgba(0,0,0,0.07);
+
   .top-info {
     position: absolute;
     width: 100%;

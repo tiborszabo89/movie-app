@@ -4,21 +4,30 @@ import MovieCard from "./components/MovieCard";
 import './App.scss';
 import SearchIcon from './search.svg';
 
-const API_URL = 'https://api.themoviedb.org/3/search/movie?api_key=30a95f151f99b59e441796c6ba07f223'
-
+const API_SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=30a95f151f99b59e441796c6ba07f223'
+const API_LATEST_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=30a95f151f99b59e441796c6ba07f223&language=en-US'
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&query=${title}`);
+    const response = await fetch(`${API_SEARCH_URL}&query=${title}`);
     const data = await response.json();
     setMovies(data.results);
   }
-
+  const latestMovies = async () => {
+    const response = await fetch(`${API_LATEST_URL}`);
+    const data = await response.json();
+    setMovies(data.results);
+  }
+  
   useEffect(() => {
-    searchMovies('');
+    searchMovies();
   }, []);
+  useEffect(() => {
+    latestMovies();
+  }, []);
+
   return (
     <div className="app">
       <h1>Movie Database Test</h1>

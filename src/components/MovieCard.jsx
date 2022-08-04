@@ -5,11 +5,12 @@ const PLACEHOLDER_IMG = 'https://www.stevensegallery.com/640/360';
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="movie-card">
+    <div className={movie.backdrop_path ? "movie-card" : "dont-display"}>
       <div className="top-info">
-        <p>{movie.release_date}</p>
+        <p>{movie.release_date ? movie.release_date : 'Upcoming'}</p>
       </div>
-      <div className="card-cover"
+      <div
+        className="card-cover"
         style={{ backgroundImage: `url(${movie.backdrop_path}` ? `url(${IMG_URL}${movie.backdrop_path})` : `url(${PLACEHOLDER_IMG})` }}>
       </div>
       <div className="bottom-info">
