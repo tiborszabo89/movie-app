@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     searchMovies();
   }, []);
+  
   useEffect(() => {
     latestMovies();
   }, []);

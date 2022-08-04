@@ -40,12 +40,12 @@ h1 {
   padding: 15px;
   border-radius: 3rem;
   background: #1c1d1f;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-  0 2px 4px rgba(0,0,0,0.07), 
-  0 4px 8px rgba(0,0,0,0.07), 
-  0 8px 16px rgba(0,0,0,0.07),
-  0 16px 32px rgba(0,0,0,0.07), 
-  0 32px 64px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+    0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07),
+    0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07),
+    0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
 .search input {
@@ -56,8 +56,9 @@ h1 {
   outline: none;
   color: #fff;
   background-color: transparent;
+
   &::placeholder {
-    color:#fff;
+    color: #fff;
   }
 }
 
@@ -75,131 +76,22 @@ h1 {
 }
 
 .container {
-  display: grid;  
-  grid-template-columns: repeat(4, 1fr);  
-  grid-gap: 25px;  
-  width: 100%;  
-  max-width: 1200px;  
-  padding: 30px;  
-  @media(max-width:1199px ) {
-    grid-template-columns: repeat(3, 1fr);  
-  }
-  @media(max-width:767px ) {
-    grid-template-columns: repeat(2, 1fr);  
-  }
-  @media(max-width:576px ) {
-    grid-template-columns: repeat(1, 1fr);  
-  }
-}
-.dont-display {
-  display: none;
-}
-.movie-card {
-  position: relative;  
-  z-index: 1;  
-  width: 100%;  
-  padding-bottom: 150%;  
-  perspective: 1000px;  
-  cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-  0 2px 4px rgba(0,0,0,0.07), 
-  0 4px 8px rgba(0,0,0,0.07), 
-  0 8px 16px rgba(0,0,0,0.07),
-  0 16px 32px rgba(0,0,0,0.07), 
-  0 32px 64px rgba(0,0,0,0.07);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
 
-  .top-info {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    z-index: 20;
-    background-color: #1c1d1f6c;
-    top: -20px;
-    margin-top: 20px;
-    color: #fff;
-    padding: 10px;
-    transition: ease all .3s;
-  }
-  .bottom-info {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    z-index: 20;
-    background-color: #1c1d1f6c;
-    bottom: -20px;
-    margin-bottom: 20px;
-    color: #fff;
-    padding: 10px;
-    transition: ease all .3s;
-
-  }
-  &:hover {
-    .top-info {
-      transform: rotateX(7deg) translateY(-6px); 
-    }
-    .bottom-info {
-      transform: rotateX(7deg) translateY(-6px); 
-
-    }
-    .card-cover {
-      transform: rotateX(7deg) translateY(-6px); 
-      &:after {
-        transform: translateY(0%);  
-      }
-      &:before {
-        opacity: 0.6;  
-        transform: rotateX(7deg) translateY(-6px) scale(1.05); 
-      }
-    }
-  }
-  .card-cover {
-    position: absolute;  
-    z-index: 1;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100%;  
-    overflow: hidden;  
-    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);  
-    background-size: cover;  
-    background-repeat: no-repeat;
-    background-position: 75% center;
-    perspective-origin: 50% 50%;  
-    transform-style: preserve-3d;  
-    transform-origin: top center;  
-    will-change: transform;  
-    transform: skewX(0.001deg);  
-    transition: transform 0.35s ease-in-out; 
-
-    &:after {
-      display: block;  
-      content: '';  
-      position: absolute;  
-      z-index: 100;  
-      top: 0;  
-      left: 0;  
-      width: 100%;  
-      height: 120%;  
-      background: linear-gradient(226deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 35%, rgba(255, 255, 255, 0.2) 42%, rgba(255, 255, 255, 0) 60%);  
-      transform: translateY(-20%);  
-      will-change: transform;  
-      transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1); 
-    }
-    &:before {
-      display: block;  
-      content: '';  
-      position: absolute;  
-      top: 0%;  
-      left: 0%;  
-      width: 100%;  
-      height: 100%;  
-      background: rgba(0, 0, 0, 0.5);  
-      box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);  
-      will-change: opacity;  
-      transform-origin: top center;  
-      transform: skewX(0.001deg);  
-      transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out; 
-    }
+  @media(max-width:1199px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
+  @media(max-width:767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(max-width:576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
